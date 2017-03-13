@@ -7,6 +7,7 @@
 <html>
 
 <head>
+  <meta charset="UTF-8">
   <title>Getting Started Extension's Popup</title>
 
   <!-- stylesheets -->
@@ -15,6 +16,7 @@
   <!-- javascript -->
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/logic.js"></script>
 
   <style>
     body {
@@ -28,7 +30,7 @@
       margin: 0px;
       margin-bottom: 10px;
     }
-
+    
     .left {
       background-color: #e38178;
       color: #ffffff;
@@ -56,11 +58,10 @@
       border-bottom-right-radius: 0px;
       border-bottom-left-radius: 10px;
     }
-
+    
     .inline {
       display: inline-block;
     }
-    
     /*
     #status {
       /* avoid an excessively wide status text 
@@ -87,30 +88,29 @@
       <div class="row">
         <div class="col-lg-6 mb10">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Enter word to filter on..">
+            <input id="wordTxt" type="text" class="form-control" style="height: 33.5px" placeholder="Enter word to filter on..">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Add!</button>
+              <button id="addBtn" class="btn btn-default">Add!</button>
             </span>
           </div>
         </div>
 
         <!-- TAG FIELD -->
       </div>
-      <div class="thumbnail mb10">
+      <div id="tagfield" class="thumbnail mb10">
         <div class="inline">
           <span class="badge right">blabla..</span><button type="button" class="badge left">&times;</button>
         </div>
       </div>
 
       <!-- TOGGLE -->
-
       <div class="btn-group btn-group-sm" role="group" data-toggle="buttons">
         <label class="btn btn-default active">
-          <input name="options" id="normal" type="radio">Normal mode</label>
+          <input name="options" id="normalRBtn" type="radio">Normal mode</label>
         <label class="btn btn-default">
-          <input name="options" id="clean" type="radio">Cleaned mode</label>
-        <label class="btn btn-default" style="width: 38px;" disabled>
-          <input name="options" id="status" type="radio" disabled>&check;</label>
+          <input name="options" id="cleanRBtn" type="radio">Cleaned mode</label>
+        <label id="markOn" class="btn btn-default" style="width: 38px;" disabled>
+          <input name="options" type="radio" disabled>&nbsp;</label>
       </div>
 
     </div>
